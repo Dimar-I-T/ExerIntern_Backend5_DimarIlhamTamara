@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const user_router = require('./routes/user_routes');
-const chat_router = require('./routes/chat_routes');
-require("./mongo.config").connectDB();
+const user_router = require('./src/routes/user_routes');
+const chat_router = require('./src/routes/chat_routes');
+require("./src/config/mongo.config").connectDB();
 require("dotenv").config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
