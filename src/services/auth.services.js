@@ -28,7 +28,7 @@ const authUpdateUser = async (body) => {
     try{
         const {id, new_username, new_password} = body; 
         const user = await User.findById(id);
-        const user_ = await User.findOne({new_username});
+        const user_ = await User.findOne({username: new_username});
         if (user_){
             return {success: false, message: "username is already used"};
         }
